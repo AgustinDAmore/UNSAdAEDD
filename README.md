@@ -1,2 +1,3 @@
 # UNSAdAEDD
-Estructuras de Datos
+Estructuras de Datos (EDD)
+Este Git contiene las EDD enseñadas.
