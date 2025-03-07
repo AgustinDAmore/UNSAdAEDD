@@ -3,25 +3,25 @@ class Pila:
         self.items = []
         self.size = 0
 
-    def esta_vacia(self):
+    def is_empty(self): # esta_vacia
         return self.size == 0
 
-    def apilar(self, elemento):
+    def push(self, elemento): # Apilar
         self.items.append(elemento)
         self.size +=1
 
-    def desapilar(self):
-        if not self.esta_vacia():
+    def pop(self): # Desapilar
+        if not self.is_empty():
             return self.items.pop()
             self.size-=1
         else:
             return "La pila está vacía"
 
-    def tope(self):
-        if not self.esta_vacia():
+    def peek(self): # Tope
+        if not self.is_empty():
             return self.items[-1]
         else:
             return "La pila está vacía"
 
-    def tamano(self):
+    def size(self): # Tamaño
         return self.size
