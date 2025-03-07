@@ -16,4 +16,4 @@ UNSAdA (Arrecifes / Exaltación de la Cruz)
 **Información importante:**
 
 * Aquí se publicaran todos los pdf, codigos de ejemplo y los trabajos practicos de la materia.
-* Para consultas, pueden utilizar el foro del campus virtual, o enviar un correo electrónico a adamore@docentes.unsada.edu.ar.
+* Para consultas, pueden utilizar el foro del campus virtual
