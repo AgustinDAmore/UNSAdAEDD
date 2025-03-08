@@ -49,3 +49,10 @@ for i in range(4):
 
 print(pila.cima())
 print(pila.tamano())
+
+pila.apilar(1)
+pila.apilar(2)
+pila.apilar(6)
+pila.apilar(5)
+print(pila.esta_vacia())
+print(pila.cima())
