@@ -47,7 +47,7 @@ print("apilamos el elemento 5: ",pila.apilar(5))
 # mostramos el estado actual de la pila
 # al contener elementos esta devuelve False
 print("La pila esta vacia?: ",pila.esta_vacia())
-#Mostramos el elemento que se encuantra en la cima de la pila
+#Mostramos el elemento que se encuentra en la cima de la pila
 print("el elemento en la cima de la pila es: ",pila.cima())
 # Mostramos la cantidad de elementos guardados dentro de la pila
 print("hay ",pila.tamano()," elementos dentro de la pila")
@@ -55,7 +55,7 @@ print("hay ",pila.tamano()," elementos dentro de la pila")
 # el ultimo en ingresar en el primero en salir
 print("El elemento que desapilamos es: ",pila.desapilar())
 
-#Mostramos el elemento que se encuantra actualmente en la cima de la pila
+#Mostramos el elemento que se encuentra actualmente en la cima de la pila
 print("el elemento en la cima de la pila es: ",pila.cima())
 # Mostramos la cantidad de elementos guardados dentro de la pila
 print("hay ",pila.tamano()," elementos dentro de la pila")
