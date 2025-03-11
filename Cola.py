@@ -9,10 +9,10 @@ class Cola:
     
     def desencolar(self):
         if self.vacia():
-            print("No hay elementos en la Cola")
+            print(self)
         else:
-            self.items.pop()
             self.tamanio-=1
+            return self.items.pop()
     
     def vacia(self):
         return self.tamanio==0
@@ -22,13 +22,13 @@ class Cola:
             return "Cola: [] (Vacía)"
         else:
             elementos = ", ".join(map(str, self.items)) # Convierte los items a string y los une con comas
-            return f"Cola: [{elementos}] (Frente -> Atras)"
+            return f"Cola: [{elementos}] (Atras -> Frente)"
 
     
 
 cola = Cola()
 
-cola.desencolar()
+print("Elemento desencolado:",cola.desencolar())
 
 print("Cant elementos en la Cola: ",cola.tamanio)
 print("Mostramos los elementos dentro de la cola: ",cola)
@@ -41,7 +41,7 @@ cola.encolar(4)
 print("Cant elementos en la Cola: ",cola.tamanio)
 print("Mostramos los elementos dentro de la cola: ",cola)
 
-cola.desencolar()
+print("Elemento desencolado:",cola.desencolar())
 
 print("Cant elementos en la Cola: ",cola.tamanio)
 print("Mostramos los elementos dentro de la cola: ",cola)
