@@ -23,9 +23,7 @@ class Cola:
         else:
             elementos = ", ".join(map(str, self.items)) # Convierte los items a string y los une con comas
             return f"Cola: [{elementos}] (Atras -> Frente)"
-
     
-
 cola = Cola()
 
 print("Elemento desencolado:",cola.desencolar())
