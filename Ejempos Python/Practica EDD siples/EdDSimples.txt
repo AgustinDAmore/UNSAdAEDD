@@ -1,0 +1,32 @@
+1. Listas
+    1)Suma de elementos: Escribe una función que tome una lista de números y devuelva la suma de todos sus elementos.
+    2)Máximo y mínimo: Crea una función que encuentre el máximo y el mínimo valor en una lista.
+    3)Eliminar duplicados: Implementa una función que elimine los elementos duplicados de una lista.
+    4)Invertir lista: Escribe una función que invierta el orden de los elementos en una lista.
+    5)Buscar elemento: Crea una función que busque un elemento específico en una lista y devuelva su índice (o -1 si no se encuentra).
+    6)Elementos pares e impares: Escribe una función que separe los elementos de una lista en dos listas: una con los números pares y otra con los impares.
+    7)Rotar lista: Crea una función que rote los elementos de una lista n posiciones hacia la izquierda.
+    8)Frecuencia de elementos: Implementa una función que cuente la frecuencia de cada elemento en una lista.
+    9)Unión de listas: Escribe una función que combine dos listas en una sola, eliminando duplicados.
+    lista_completa = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", 
+                      "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", 
+                      "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    10) Corrimiento de letras ofuscación Desencripta el siguinete mensaje "IwxvygxyveHiHexsw6469"
+
+
+2. Diccionarios
+    1)Contar palabras: Crea una función que tome un texto y devuelva un diccionario con la frecuencia de cada palabra.
+    2)Invertir diccionario: Implementa una función que invierta las claves y los valores de un diccionario (asumiendo que los valore son únicos).
+    3)Combinar diccionarios: Escribe una función que combine dos diccionarios, sumando los valores de las claves que coinciden.
+    4)Ordenar diccionario por valor: Crea una función que ordene un diccionario por sus valores.
+    5)Buscar clave: Implementa una función que busque una clave en un diccionario y devuelva su valor (o un valor predeterminado si no se encuentra).
+    6)Agrupar por categoría: Escribe una función que tome una lista de diccionarios y los agrupe por una clave específica.
+    7)Diccionario de frecuencias de caracteres: Escriba un programa en Python que cree un diccionario de frecuencia de caracteres de una cadena.
+    8)Eliminar claves duplicadas: Escribe un programa en Python para eliminar claves duplicadas de un diccionario.
+
+3. Conjuntos
+    1)Unión de conjuntos: Crea una función que encuentre la unión de dos conjuntos.
+    2)Intersección de conjuntos: Implementa una función que encuentre la intersección de dos conjuntos.
+    3)Diferencia de conjuntos: Escribe una función que encuentre la diferencia entre dos conjuntos.
+    4)Subconjunto: Crea una función que determine si un conjunto es subconjunto de otro.
+    5)Elementos únicos: Implementa una función que encuentre los elementos únicos en una lista usando conjuntos.
