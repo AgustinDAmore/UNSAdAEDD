@@ -82,3 +82,39 @@ class ListaEnlazada:
             print(nodo_actual.dato, end=" -> ")
             nodo_actual = nodo_actual.siguiente
         print("Ninguno")
+
+# Crear una instancia de la lista enlazada
+lista = ListaEnlazada()
+
+# Probar insertar_al_principio
+lista.insertar_al_principio(3)
+lista.insertar_al_principio(2)
+lista.insertar_al_principio(1)
+print("Lista después de insertar al principio (1, 2, 3):")
+lista.mostrar_lista()  # Salida: 1 -> 2 -> 3 -> Ninguno
+
+# Probar insertar_al_final
+lista.insertar_al_final(4)
+lista.insertar_al_final(5)
+print("\nLista después de insertar al final (4, 5):")
+lista.mostrar_lista()  # Salida: 1 -> 2 -> 3 -> 4 -> 5 -> Ninguno
+
+# Probar insertar_en_indice
+lista.insertar_en_indice(10, 2)  # Insertar 10 en el índice 2
+print("\nLista después de insertar 10 en el índice 2:")
+lista.mostrar_lista()  # Salida: 1 -> 2 -> 10 -> 3 -> 4 -> 5 -> Ninguno
+
+# Probar eliminar_al_principio
+lista.eliminar_al_principio()
+print("\nLista después de eliminar el primer elemento:")
+lista.mostrar_lista()  # Salida: 2 -> 10 -> 3 -> 4 -> 5 -> Ninguno
+
+# Probar eliminar_al_final
+lista.eliminar_al_final()
+print("\nLista después de eliminar el último elemento:")
+lista.mostrar_lista()  # Salida: 2 -> 10 -> 3 -> 4 -> Ninguno
+
+# Probar eliminar_en_indice
+lista.eliminar_en_indice(1)  # Eliminar el elemento en el índice 1
+print("\nLista después de eliminar el elemento en el índice 1:")
+lista.mostrar_lista()  # Salida: 2 -> 3 -> 4 -> Ninguno
