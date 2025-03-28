@@ -45,6 +45,23 @@ class ListaDoblementeEnlazada:
                 return
             actual = actual.siguiente
 
+    def insertar_en_indice(self, indice, dato):
+            if indice == 0:
+                self.insertar_al_principio(dato)
+            elif indice >= self.obtener_longitud():
+                self.insertar_al_final(dato)
+            else:
+                nuevo_nodo = Nodo(dato)
+                actual = self.cabeza
+                for _ in range(indice - 1):
+                    actual = actual.siguiente
+                nuevo_nodo.siguiente = actual.siguiente
+                nuevo_nodo.anterior = actual
+                if actual.siguiente:
+                    actual.siguiente.anterior = nuevo_nodo
+                actual.siguiente = nuevo_nodo
+
+
     def recorrer_adelante(self):
         actual = self.cabeza
         while actual:
@@ -65,22 +82,6 @@ class ListaDoblementeEnlazada:
             print(actual.dato, end=" <-> ")
             actual = actual.siguiente
         print("None")
-
-    def insertar_en_indice(self, indice, dato):
-        if indice == 0:
-            self.insertar_al_principio(dato)
-        elif indice >= self.obtener_longitud():
-            self.insertar_al_final(dato)
-        else:
-            nuevo_nodo = Nodo(dato)
-            actual = self.cabeza
-            for _ in range(indice - 1):
-                actual = actual.siguiente
-            nuevo_nodo.siguiente = actual.siguiente
-            nuevo_nodo.anterior = actual
-            if actual.siguiente:
-                actual.siguiente.anterior = nuevo_nodo
-            actual.siguiente = nuevo_nodo
 
     def obtener_longitud(self):
         contador = 0
