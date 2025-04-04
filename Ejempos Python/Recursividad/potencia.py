@@ -8,3 +8,4 @@ numero = 10
 for i in range(numero):
     resultado_potencia = potencia_recursiva(i, i)
     print(f"({i}^{i}) = {resultado_potencia}")
+    print(i**i)

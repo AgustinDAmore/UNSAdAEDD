@@ -9,6 +9,9 @@ class ArbolBinarioBusqueda:
     def __init__(self):
         self.raiz = None
 
+    def vaciar(self):
+        self.raiz = None
+
     def insertar(self, valor):
         if self.raiz is None:
             self.raiz = NodoArbolBinarioBusqueda(valor)
@@ -28,17 +31,17 @@ class ArbolBinarioBusqueda:
                 self.__insertar_recursivo(nodo.derecha, valor)
 
     def buscar(self, valor):
-        return self._buscar_recursivo(self.raiz, valor)
+        return self.__buscar_recursivo(self.raiz, valor)
 
-    def _buscar_recursivo(self, nodo, valor):
+    def __buscar_recursivo(self, nodo, valor):
         if nodo is None:
             return False
         if valor == nodo.valor:
             return True
         elif valor < nodo.valor:
-            return self._buscar_recursivo(nodo.izquierda, valor)
+            return self.__buscar_recursivo(nodo.izquierda, valor)
         else:
-            return self._buscar_recursivo(nodo.derecha, valor)
+            return self.__buscar_recursivo(nodo.derecha, valor)
 
     def eliminar(self, valor):
         self.raiz = self.__eliminar_recursivo(self.raiz, valor)
@@ -69,7 +72,10 @@ class ArbolBinarioBusqueda:
         return actual
 
     def imprimir_arbol(self):
-        self.__imprimir_recursivo(self.raiz, 0)
+        if self.raiz is None:
+            print("Arbol sin datos!")
+        else:
+            self.__imprimir_recursivo(self.raiz, 0)
 
     def __imprimir_recursivo(self, nodo, nivel):
         if nodo is not None:
@@ -78,6 +84,7 @@ class ArbolBinarioBusqueda:
             self.__imprimir_recursivo(nodo.izquierda, nivel + 1)
 
 abb = ArbolBinarioBusqueda()
+
 abb.insertar(50)
 abb.insertar(30)
 abb.insertar(70)
@@ -87,6 +94,7 @@ abb.insertar(40)
 abb.insertar(60)
 abb.insertar(80)
 abb.insertar(90)
+
 
 print("Árbol Binario de Búsqueda:")
 abb.imprimir_arbol()
@@ -101,3 +109,20 @@ abb.imprimir_arbol()
 abb.eliminar(50)
 print("\nÁrbol después de eliminar la raíz (50):")
 abb.imprimir_arbol()
+
+abb.vaciar()
+abb.imprimir_arbol()
+
+abb.insertar("B")
+abb.insertar("G")
+abb.insertar("A")
+abb.insertar("H")
+abb.insertar("I")
+abb.insertar("C")
+abb.insertar("D")
+abb.insertar("J")
+abb.insertar("E")
+abb.insertar("F")
+
+abb.imprimir_arbol()
+print("\nBuscando el valor E:", abb.buscar("E"))
