@@ -21,7 +21,7 @@ class ArbolBinarioBusqueda:
                 nodo.izquierda = NodoArbolBinarioBusqueda(valor)
             else:
                 self.__insertar_recursivo(nodo.izquierda, valor)
-        elif valor > nodo.valor:
+        else:
             if nodo.derecha is None:
                 nodo.derecha = NodoArbolBinarioBusqueda(valor)
             else:
@@ -46,7 +46,6 @@ class ArbolBinarioBusqueda:
     def __eliminar_recursivo(self, nodo, valor):
         if nodo is None:
             return nodo
-
         if valor < nodo.valor:
             nodo.izquierda = self.__eliminar_recursivo(nodo.izquierda, valor)
         elif valor > nodo.valor:
