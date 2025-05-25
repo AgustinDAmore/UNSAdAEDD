@@ -1,8 +1,51 @@
-
 class Hash():
-    def __init__(self, tamanio):
+    def __init__(self,tamanio):
         self.tamanio_max = tamanio
-        self.datos = ["*" for _ in range(tamanio)]
+        self.datos = []
+        for _ in range(tamanio):
+            self.datos.append("*")
+
+    def insertar(self,clave):
+        indi = clave % self.tamanio_max
+        if self.datos[indi] == "*":
+            self.datos[indi] = clave
+            return True
+
+        for newindi in range(indi,self.tamanio_max):
+            if self.datos[newindi] == "*":
+                self.datos[newindi] = clave
+                return True
+            
+        for newindi in range(indi):
+            if self.datos[newindi] == "*":
+                self.datos[newindi] = clave
+                return True      
+        return False
+        
+    def buscar(self,claveBuscada):
+        indi = claveBuscada % self.tamanio_max
+        if self.datos[indi] == claveBuscada:
+            return True
+
+        for newindi in range(indi,self.tamanio_max):
+            if self.datos[newindi] == claveBuscada:
+                return True
+            
+        for newindi in range(indi):
+            if self.datos[newindi] == claveBuscada:
+                return True
+        return False
+
+    def nuevotamanio(self):
+        newsize = self.tamanio_max*2
+        newhash = Hash(newsize)
+        for elemento in self.datos:
+            if elemento != "*":
+                newhash.insertar(elemento)
+
+        self.tamanio_max = newsize
+        self.datos = newhash.datos
+        return True
 
     def dibujar(self):
         label_indices = "Índice: "
@@ -15,58 +58,32 @@ class Hash():
 
         label_valores_con_datos = "Valor:  "
         parts_valores_con_datos = []
+        cont = 0
         for valor_dato in self.datos:
-            parts_valores_con_datos.append(f"{valor_dato:^3}")
+            parts_valores_con_datos.append(f"{valor_dato:^{len(str(cont))+2}}")
+            cont += 1
 
         linea_valores_con_datos_final = label_valores_con_datos + "|" + "|".join(parts_valores_con_datos) + "|"
         print(linea_valores_con_datos_final)
 
-    def insertar(self,dato):
-        if self.datos.count("*")==0:
-            print("Lista llena!")
-            return False
-        
-        posicion = dato%self.tamanio_max
-        if self.datos[posicion] == "*":
-            self.datos[posicion] = dato
-            return True
-        
-        else:
-            for i in range(posicion,self.tamanio_max):
-                if self.datos[i] == "*":
-                    self.datos[i] = dato
-                    return True
-            else:
-                for i in range(0,posicion):
-                    if self.datos[i] == "*":
-                        self.datos[i] = dato
-                        return True
-            return False
-    
-    def buscar(self,datoBuscado):
-        posicion = dato%self.tamanio_max
-        if self.datos[posicion] == "*":
-            self.datos[posicion] = datoBuscado
-        else:
-            for i in range(posicion,self.tamanio_max):
-                if self.datos[i] == datoBuscado:
-                    return True
-            else:
-                for i in range(0,posicion):
-                    if self.datos[i] == datoBuscado:
-                        return True
-                    
-            return False
-        
-tamanio = 5
-datos = [7, 12, 17, 22, 27, 30]
+# MAIN
+lista = [7, 12, 17, 22, 27,30]
+hash = Hash(5)
 
-hash = Hash(tamanio)
 hash.dibujar()
-for dato in datos:
-    print(hash.insertar(dato))
+for elemento in lista:
     print()
+    print(hash.insertar(elemento),"el elemento ",elemento)
     hash.dibujar()
 
-print(hash.buscar(55))
-print(hash.buscar(27))
+print()
+hash.nuevotamanio()
+hash.dibujar()
+
+print()
+hash.insertar(30)
+hash.dibujar()
+
+print()
+hash.nuevotamanio()
+hash.dibujar()

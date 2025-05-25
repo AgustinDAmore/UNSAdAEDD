@@ -6,6 +6,8 @@ class Hash():
             self.datos.append("*")
 
     def insertar(self,clave):
+        if self.datos.count("*") == 0:
+            self.__nuevotamanio()
         indi = clave % self.tamanio_max
         if self.datos[indi] == "*":
             self.datos[indi] = clave
@@ -36,7 +38,7 @@ class Hash():
                 return True
         return False
 
-    def nuevotamanio(self):
+    def __nuevotamanio(self):
         newsize = self.tamanio_max*2
         newhash = Hash(newsize)
         for elemento in self.datos:
@@ -57,14 +59,16 @@ class Hash():
 
         label_valores_con_datos = "Valor:  "
         parts_valores_con_datos = []
+        cont = 0
         for valor_dato in self.datos:
-            parts_valores_con_datos.append(f"{valor_dato:^3}")
+            parts_valores_con_datos.append(f"{valor_dato:^{len(str(cont))+2}}")
+            cont += 1
 
         linea_valores_con_datos_final = label_valores_con_datos + "|" + "|".join(parts_valores_con_datos) + "|"
         print(linea_valores_con_datos_final)
 
 # MAIN
-lista = [7, 12, 17, 22, 27,30]
+lista = [7, 12, 17, 22, 27]
 hash = Hash(5)
 
 hash.dibujar()
@@ -74,10 +78,5 @@ for elemento in lista:
     hash.dibujar()
 
 print()
-hash.nuevotamanio()
-hash.dibujar()
-
-print()
 hash.insertar(30)
 hash.dibujar()
-
